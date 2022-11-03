@@ -18,12 +18,14 @@ window.addEventListener("DOMContentLoaded",async() => {
 
             const estudiante= doc.data()
             html += `
-                <div>
-                    <h3>${estudiante.id_estudiante}</h3>
+                <div class= "card card-body mt-2 border-primary">
+                    <h3 class="h5">${estudiante.id_estudiante}</h3>
                     <p>${estudiante.nombre_estudiante}</p>
                     <p>${estudiante.apellidos_estudiante}</p>
-                    <button class= 'delete_estudiante' data-id="${doc.id}">Borrar</button>
-                    <button class= 'edit_estudiante' data-id="${doc.id}">Editar</button>
+                    <div>
+                    <button class= ' btn btn-primary delete_estudiante' data-id="${doc.id}">Borrar</button>
+                    <button class= ' btn btn-secondary edit_estudiante' data-id="${doc.id}">Editar</button>
+                    </div>
                 </div>
             `; 
     });
@@ -62,17 +64,18 @@ window.addEventListener("DOMContentLoaded",async() => {
 
             const clase= doc.data()
             html2 += `
-                <div>
+                <div class= "card card-body mt-2 border-primary">
                     <h3>${clase.id_clase}</h3>
                     <p>${clase.titulo}</p>
                     <p>${clase.descripcion}</p>
-                    <button class= 'delete_clase' data-id="${doc.id}">Borrar</button>
-                    <button class= 'edit_clase' data-id="${doc.id}">Editar</button>
-                
+                    <div>
+                    <button class= 'btn btn-primary delete_clase' data-id="${doc.id}">Borrar</button>
+                    <button class= 'btn btn-secondary edit_clase' data-id="${doc.id}">Editar</button>
+                    </div>
                 </div>
             `; 
     });
-        clasesContainer.innerHTML= html2;
+       clasesContainer.innerHTML= html2;
     // borrar clase
         const btn_delete_Clase= clasesContainer.querySelectorAll(".delete_clase");
         btn_delete_Clase.forEach(btn => {
@@ -83,17 +86,18 @@ window.addEventListener("DOMContentLoaded",async() => {
     })
 
     // editar clase
-    const btn_edit_clase= clasesContainer.querySelectorAll(".edit_clase");
-    btn_edit_clase.forEach(btn => {
+    const btn_edit_Clase= clasesContainer.querySelectorAll(".edit_clase");
+    btn_edit_Clase.forEach(btn => {
         btn.addEventListener("click",async(e) => {
         const doc = await getClase(e.target.dataset.id)
         const clase = doc.data()
-        clasesForm["id-clase"].value = clase.id_clase
-        clasesForm["titulo"].value = clase.titulo
-        clasesForm["descripcion"].value = clase.descripcion
+        matriculasForm["id-clase"].value = clase.id_clase
+        matriculasForm["titulo"].value = clase.titulo
+        matriculasForm["descripcion"].value = clase.descripcion
         editStatus= true
         id= e.target.dataset.id
-        clasesForm["boton-guardar-clase"].innerText="Actualizar"
+        matriculasForm["boton-guardar-clase"].innerText="Actualizar"
+        
 
         });
     })
@@ -106,12 +110,14 @@ window.addEventListener("DOMContentLoaded",async() => {
 
             const matricula= doc.data()
             html3 += `
-                <div>
+                <div class= "card card-body mt-2 border-primary">
                     <h3>${matricula.id_matricula}</h3>
                     <p>${matricula.id_estudiante}</p>
                     <p>${matricula.id_clase}</p>
-                    <button class= 'delete_matricula' data-id="${doc.id}">Borrar</button>
-                    <button class= 'edit_matricula' data-id="${doc.id}">Editar</button>
+                    <div>
+                    <button class= 'btn btn-primary delete_matricula' data-id="${doc.id}">Borrar</button>
+                    <button class= 'btn btn-secondary edit_matricula' data-id="${doc.id}">Editar</button>
+                    </div>
                 </div>
             `; 
     });
