@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Universidad</title>
+</head>
+<body>
+    <form id="estudiantes-form">
+
+        <label for="id_estudiante">Id Estudiante:</label>
+        <input type="text" placeholder="ID del estudiante " id="id-estudiante">
+
+        <label for="apellidos_estudiantes">Apellidos Estudiante:</label>
+        <input type="text" placeholder="Apellidos del estudiante" id="apellido-estudiante">
+
+        <label for="nombre_estudiante">Nombre Estudiante:</label>
+        <input type="text" placeholder="Nombre del estudiante" id="nombre-estudiante">
+
+        <button id="boton-guardar-estudiante">Guardar</button>
+
+    </form>
+
+    <div id="estudiante-container"></div>
+
+    <form id="clases-form">
+
+        <label for="id_clase">Id Clase:</label>
+        <input type="text" placeholder="ID de la clase " id="id-clase">
+
+        <label for="titulo">Titulo:</label>
+        <input type="text" placeholder="Titulo de la clase" id="titulo">
+
+        <label for="descripcion">Descripcion:</label>
+        <textarea id="descripcion" rows="3" placeholder="Descripcion de la clase"></textarea>
+
+        <button id="boton-guardar-clase">Guardar</button>
+
+    </form>
+
+    <div id="clase-container"></div>
+   
+    <form id="matriculas-form">
+
+
+        <label for="id_matricula">ID matricula:</label>
+        <input type="text" placeholder="ID matricula" id="id-matricula">
+
+        <label for="id_estudiante">Id Estudiante:</label>
+        <input type="text" placeholder="ID del estudiante " id="M-id-estudiante">
+
+        <label for="id_clase">Id Clase:</label>
+        <input type="text" placeholder="ID de la clase " id="M-id-clase">
+
+        
+
+        <button id="boton-guardar-Matricula">Guardar</button>
+    
+    </form>
+
+    <div id="matriculas-container"></div>
+    <script type="module" src="./index.js"></script>
+
+
+</body>
+</html>
